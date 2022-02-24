@@ -1,1 +1,145 @@
+gcc -g p5final.c -lm
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x9c9: file p5final.c, line 41.
+(gdb) r
+Starting program: /home/runner/Test2Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p5final.c:41
+41    {
+(gdb) n
+42      int x,a[x];
+(gdb) s
+43      x=input_array_size();
+(gdb) n
+enter the number
+4
+44      init_array( x, a);
+(gdb) n
+45       erotosthenes_sieve(x,a);
+(gdb) n
+ 
+ gcc -g p5final.c -lm
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x9c9: file p5final.c, line 41.
+(gdb) r
+Starting program: /home/runner/Test2Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5final.c:41
+41    {
+(gdb) n
+42      int x,a[x];
+(gdb) s
+43      x=input_array_size();
+(gdb) n
+enter the number
+4
+44      init_array( x, a);
+(gdb) s
+init_array (n=4, a=0x7fff235c6120) at p5final.c:13
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i]=i;
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i]=i;
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i]=i;
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i]=i;
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+15      a[0]=0;
+(gdb) n
+16      a[1]=0;
+(gdb) n
+17  }
+(gdb) n
+main () at p5final.c:45
+45       erotosthenes_sieve(x,a);
+(gdb) s
+erotosthenes_sieve (n=4, a=0x7fff235c6120) at p5final.c:20
+20    int i=2;
+(gdb) n
+21    while(i<sqrt(n))
+(gdb) n
+30    }
+(gdb) n
+main () at p5final.c:46
+46      display(x,a);
+(gdb) s
+display (n=4, a=0x7fff235c6120) at p5final.c:33
+33    for(int i=0; i<n; i++) 
+(gdb) n
+35      if(a[i] !=0)
+(gdb) n
+33    for(int i=0; i<n; i++) 
+(gdb) n
+35      if(a[i] !=0)
+(gdb) n
+33    for(int i=0; i<n; i++) 
+(gdb) n
+35      if(a[i] !=0)
+(gdb) n
+36        printf("%d ",a[i]);
+(gdb) n
+33    for(int i=0; i<n; i++) 
+(gdb) n
+35      if(a[i] !=0)
+(gdb) n
+36        printf("%d ",a[i]);
+(gdb) n
+33    for(int i=0; i<n; i++) 
+(gdb) 
+38     printf("\n");
+(gdb) n
+2 3 
+39    }
+(gdb) n
+main () at p5final.c:47
+47      return 0;
+(gdb) n
+48    }
+(gdb) c
+Continuing.
+[Inferior 1 (process 1284) exited normally]
+(gdb) 
