@@ -1,1 +1,78 @@
+gcc -g p1final.c -lm
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8f0: file p1final.c, line 17.
+(gdb) r
+Starting program: /home/runner/Test2Session2-1/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1final.c:17
+17  {
+(gdb) n
+19    input(&x1,&y1,&x2,&y2);
+(gdb) s
+input (x1=0x7ffc0d4edbf4, y1=0x7ffc0d4edbfc, x2=0x7ffc0d4edbf8, 
+    y2=0x7ffc0d4edc00) at p1final.c:5
+5     printf("enter the two points\n");
+(gdb) n
+enter the two points
+6     scanf("%f %f %f %f",x1,y1,x2,y2);
+(gdb) n
+4
+3
+6
+3
+7   }
+(gdb) n
+main () at p1final.c:20
+20    find_distance(x1,y1,x2,y2,&distance);
+(gdb) s
+find_distance (x1=4, y1=3, x2=6, y2=3, distance=0x7ffc0d4edc04) at p1final.c:10
+10    *distance=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+(gdb) n
+11    }
+(gdb) p *distance
+$1 = 2
+(gdb) n
+main () at p1final.c:21
+21    output(x1,y1,x2,y2,distance);
+(gdb) s
+output (x1=4, y1=3, x2=6, y2=3, distance=2) at p1final.c:14
+14    printf("distance between two points %f %f and %f %f is %f\n",x1,y1,x2,y2,distance);
+(gdb) p x1
+$2 = 4
+(gdb) p x2
+$3 = 6
+(gdb) p y1
+$4 = 3
+(gdb) p y2
+$5 = 3
+(gdb) p distance
+$6 = 2
+(gdb) n
+distance between two points 4.000000 3.000000 and 6.000000 3.000000 is 2.000000
+15  }
+(gdb) n
+main () at p1final.c:22
+22   return 0;
+(gdb) n
+23  }
+(gdb) c
+Continuing.
+[Inferior 1 (process 336) exited normally]
+(gdb) 
