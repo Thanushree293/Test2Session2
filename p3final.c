@@ -9,20 +9,20 @@ int input_number()
 }
 int is_prime(int n)
 {
-  int i;
-  for(int i=2;i<=sqrt(n);i++)
+  int count=0;
+  for(int i=1;i<=n;i++)
     {
       if((n%i)==0)
-        return 0;
+        count++;
     }
-   return 1;
+   return count;
 }
 void output(int n,int is_prime)
 {
-  if(is_prime==0)
-    printf("%d is not a prime number\n",n);
-  else
+  if(is_prime<=2)
     printf("%d is a prime number\n",n);
+  else
+    printf("%d is a not prime number\n",n);
 }
 int main()
 {
